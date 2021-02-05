@@ -1,0 +1,1 @@
+export const SAY_HELLO_WORLD = "SayHelloWorld";
