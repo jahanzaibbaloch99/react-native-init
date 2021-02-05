@@ -20,3 +20,12 @@ Right now this template contains the following things:
 
 1. Simple directory structure setup
 2. Basic HTTP service setup using Axios
+
+#### To do:
+
+1. Add Firebase Push Notifications support
+2. Improve HTTP service area
+3. Add some basic Regex helpers
+4. Add some basic useful components
+
+#### Pull requests will welcome
