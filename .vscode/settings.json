@@ -7,5 +7,6 @@
   "editor.insertSpaces": false,
   "editor.detectIndentation": false,
   "prettier.jsxSingleQuote": true,
-  "prettier.singleQuote": true
+	"prettier.singleQuote": true,
+	"javascript.format.semicolons": "insert"
 }
