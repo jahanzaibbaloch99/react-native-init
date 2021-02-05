@@ -4,11 +4,21 @@ import { View, Text } from 'react-native';
 import { connect } from "react-redux";
 import { sayHelloWorld } from "../Stores/Actions";
 
+import { PostsService } from "../Services";
+
 class Home extends Component {
 
-	componentDidMount() {
+	async componentDidMount() {
 
-		this.props.sayHelloWorld('Hello');
+		this.props.sayHelloWorld('Hello World');
+
+		// var response = await PostsService.getPosts();
+
+		// console.log('response', response.data.length);
+
+		// response = await PostsService.getPost(1);
+
+		// console.log('response 2', response.data);
 
 	}
 
