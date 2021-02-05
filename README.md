@@ -28,4 +28,4 @@ Right now this template contains the following things:
 3. Add some basic Regex helpers
 4. Add some basic useful components
 
-#### Pull requests will welcome
+#### Pull requests are welcome
