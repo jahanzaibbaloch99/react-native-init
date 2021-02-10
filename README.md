@@ -27,5 +27,8 @@ Right now this template contains the following things:
 2. Improve HTTP service area
 3. Add some basic Regex helpers
 4. Add some basic useful components
+5. Add permissions plugin
+6. Add support to import and use SVG images
+7. Redux Saga for async functions
 
 #### Pull requests are welcome
