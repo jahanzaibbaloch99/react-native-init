@@ -30,5 +30,7 @@ Right now this template contains the following things:
 5. Add permissions plugin
 6. Add support to import and use SVG images
 7. Redux Saga for async functions
+8. Add toast plugin
+9. Add drawer plugin
 
 #### Pull requests are welcome
