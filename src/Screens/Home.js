@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, Button } from 'react-native';
 
 import { connect } from "react-redux";
 import { sayHelloWorld } from "../Stores/Actions";
@@ -44,6 +44,9 @@ class Home extends Component {
 				<Text style={styles.paragraph}>
 					A <Text style={{ fontWeight: 'bold', }}>FastImage</Text> component that caches image
 				</Text>
+				<Button title={"Navigate To Other Screen"} onPress={() => {
+					this.props.navigation.navigate('Detail');
+				}}></Button>
 			</View>
 		);
 	}
