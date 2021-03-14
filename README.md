@@ -2,31 +2,14 @@
 
 #### A simple react-native project with basic dependencies setup
 
-Right now this template contains the following things:
+#### Features:
+1. Navigation setup using react-navigation
+2. State management using Redux
+3. HTTP service client using Axios
+4. FastImage component for image caching and fast loading
+5. Simple directory structure
 
-#### Base
-
-1. React **(v16.13)**
-2. React Native **(v0.63.4)**
-
-#### Packages:
-
-1. React Navigation
-2. React Redux
-3. Axios
-
-#### Components & Helpers:
-
-1. FastImage (image cache)
-2. URI query builder helper
-
-#### Other things:
-
-1. Simple directory structure
-2. HTTP service setup using Axios
-3. Redux store and reducer setup
-
-#### To do:
+#### Todo list for future:
 
 1. Firebase Push Notifications
 2. Firebase InApp messaging
