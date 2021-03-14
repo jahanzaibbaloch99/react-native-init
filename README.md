@@ -1,6 +1,6 @@
-# react-native-simple-boilerplate
+# react-native-init
 
-#### A simple react native project with only essential things that are required to build a great app
+#### A simple react-native project with basic dependencies setup
 
 Right now this template contains the following things:
 
@@ -9,12 +9,11 @@ Right now this template contains the following things:
 1. React **(v16.13)**
 2. React Native **(v0.63.4)**
 
-#### Pre-installed Packages:
+#### Packages:
 
 1. React Navigation
 2. React Redux
 3. Axios
-4. Query Builder for HTTP services
 
 #### Other things:
 
