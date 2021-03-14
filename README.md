@@ -15,21 +15,27 @@ Right now this template contains the following things:
 2. React Redux
 3. Axios
 
+#### Components & Helpers:
+
+1. FastImage (image cache)
+2. URI query builder helper
+
 #### Other things:
 
-1. Simple directory structure setup
-2. Basic HTTP service setup using Axios
+1. Simple directory structure
+2. HTTP service setup using Axios
+3. Redux store and reducer setup
 
 #### To do:
 
-1. Add Firebase Push Notifications support
-2. Improve HTTP service area
-3. Add some basic Regex helpers
-4. Add some basic useful components
-5. Add permissions plugin
-6. Add support to import and use SVG images
-7. Redux Saga for async functions
-8. Add toast plugin
-9. Add drawer plugin
+1. Firebase Push Notifications
+2. Firebase InApp messaging
+4. Regex helpers
+6. Permissions
+7. SVG images
+8. Redux Saga
+9. Toasts
+10. Drawer
+11. Deeplinks
 
 #### Pull requests are welcome
