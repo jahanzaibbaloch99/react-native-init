@@ -12,8 +12,6 @@ class Home extends Component {
 
 	async componentDidMount() {
 
-		// console.log('a', getToken());
-
 		this.props.sayHelloWorld('React Native Simple Boilerplate');
 
 		// var response = await PostsService.getPosts();
@@ -23,12 +21,6 @@ class Home extends Component {
 		// response = await PostsService.getPost(1);
 
 		// console.log('response 2', response.data);
-
-		// messaging().onMessage(() => {
-
-		// 	console.log('Message received');
-
-		// });
 
 	}
 
