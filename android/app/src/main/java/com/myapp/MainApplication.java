@@ -1,7 +1,11 @@
 package com.myapp;
 
 import android.app.Application;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.content.Context;
+import android.os.Build;
+
 import com.facebook.react.PackageList;
 import com.facebook.react.ReactApplication;
 import com.facebook.react.ReactInstanceManager;
@@ -43,8 +47,24 @@ public class MainApplication extends Application implements ReactApplication {
   @Override
   public void onCreate() {
     super.onCreate();
-    SoLoader.init(this, /* native exopackage */ false);
+    
+		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+				NotificationChannel notificationChannel = new NotificationChannel("500", "MainChannel", NotificationManager.IMPORTANCE_HIGH);
+				notificationChannel.setShowBadge(true);
+				notificationChannel.setDescription("Main channel for push notifications");
+				notificationChannel.enableVibration(true);
+				notificationChannel.enableLights(true);
+				notificationChannel.setVibrationPattern(new long[]{400, 200, 400});
+				//notificationChannel.setLockscreenVisibility(Notification.VISIBILITY_PUBLIC);
+				NotificationManager manager = getSystemService(NotificationManager.class);
+				manager.createNotificationChannel(notificationChannel);
+		}
+		
+		SoLoader.init(this, /* native exopackage */ false);
     initializeFlipper(this, getReactNativeHost().getReactInstanceManager());
+
+
+
   }
 
   /**
