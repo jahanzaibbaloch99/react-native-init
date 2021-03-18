@@ -11,6 +11,7 @@
 6. Firebase Push Notifications helper
 7. Stripe helper
 8. Deeplinks helper
+9. App auto update helper 
 
 #### Todo list for future:
 
