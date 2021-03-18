@@ -15,13 +15,19 @@ export default function checkForAppUpdates() {
 		toSemverConverter: (ver => {
 			// i.e if 400401 is the Android version, and we want to convert it to 4.4.1
 			const androidVersionNo = parseInt(ver, 10);
-			const majorVer = Math.trunc(androidVersionNo / 10000);
-			const minorVerStarter = androidVersionNo - majorVer * 10000;
+			// console.log('androidVersionNo', androidVersionNo);
+			const majorVer = Math.trunc(androidVersionNo / 1000);
+			const minorVerStarter = androidVersionNo - majorVer * 1000;
 			const minorVer = Math.trunc(minorVerStarter / 100);
 			const patchVersion = Math.trunc(minorVerStarter - minorVer * 100);
-			return `${majorVer}.${minorVer}.${patchVersion}`;
+			var string = `${majorVer}.${minorVer}.${patchVersion}`;
+			// console.log('string', string, ver);
+			return string;
 		})
 	}).then(result => {
+
+		// console.log('update result', result);
+
 		if (result.shouldUpdate) {
 			const updateType = result.other.updatePriority >= HIGH_PRIORITY_UPDATE
 				? SpInAppUpdates.UPDATE_TYPE.IMMEDIATE
@@ -29,12 +35,14 @@ export default function checkForAppUpdates() {
 
 			inAppUpdates.startUpdate({
 				updateType, // android only, on iOS the user will be promped to go to your app store page
+			}).then((t) => {
+				// console.log('inAppUpdates', t);
 			}).catch((result) => {
-				console.log("catch startUpdate", result);
+				// console.log("catch startUpdate", result);
 			});
 		}
 	}).catch((result) => {
-		console.log("catch checkNeedsUpdate", result);
+		// console.log("catch checkNeedsUpdate", result);
 	});
 
 }
