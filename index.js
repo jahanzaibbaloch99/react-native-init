@@ -7,6 +7,6 @@ import { initFCM } from "./src/Helpers/FCM";
 import checkForAppUpdates from "./src/Helpers/AutoUpdate";
 
 initFCM();
-checkForAppUpdates();
+// checkForAppUpdates();
 
 AppRegistry.registerComponent(appName, () => App);
