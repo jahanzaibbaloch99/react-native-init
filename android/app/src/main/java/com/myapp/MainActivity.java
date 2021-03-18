@@ -1,4 +1,4 @@
-package com.techlogix.mobilinkcustomer;
+package com.myapp;
 
 import com.facebook.react.ReactActivity;
 
