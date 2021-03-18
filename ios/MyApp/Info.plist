@@ -25,6 +25,10 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSAppTransportSecurity</key>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+	   <string>itms-apps</string>
+	</array>
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
