@@ -1,3 +1,5 @@
+// Using https://rnfirebase.io/messaging/usage
+
 import store from "../Stores";
 import { setFCMToken } from "../Stores/Actions";
 import PushNotification from "react-native-push-notification";

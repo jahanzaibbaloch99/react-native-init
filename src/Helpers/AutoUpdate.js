@@ -1,3 +1,5 @@
+// Using  https://github.com/SudoPlz/sp-react-native-in-app-updates#readme
+
 import DeviceInfo from "react-native-device-info";
 import SpInAppUpdates from 'sp-react-native-in-app-updates';
 

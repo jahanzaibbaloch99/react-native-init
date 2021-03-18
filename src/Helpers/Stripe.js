@@ -1,3 +1,5 @@
+// Using https://github.com/tipsi/tipsi-stripe
+
 import stripe from 'tipsi-stripe';
 
 // Aciano Stripe Test key
