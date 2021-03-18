@@ -1,5 +1,5 @@
 import {get} from './HttpService';
-import {getURIFor} from '../Helpers';
+import {getURIFor} from '../Helpers/URIBuilder';
 
 export default class PostsService {
   static getPosts = () => {
