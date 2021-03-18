@@ -1,4 +1,4 @@
-package com.myapp;
+package com.techlogix.mobilinkcustomer;
 
 import android.app.Application;
 import android.app.NotificationChannel;
@@ -63,7 +63,7 @@ public class MainApplication extends MultiDexApplication  implements ReactApplic
 		}
 		
 		SoLoader.init(this, /* native exopackage */ false);
-    initializeFlipper(this, getReactNativeHost().getReactInstanceManager());
+    // initializeFlipper(this, getReactNativeHost().getReactInstanceManager());
 
 
 
@@ -84,7 +84,7 @@ public class MainApplication extends MultiDexApplication  implements ReactApplic
          We use reflection here to pick up the class that initializes Flipper,
         since Flipper library is not available in release mode
         */
-        Class<?> aClass = Class.forName("com.myapp.ReactNativeFlipper");
+        Class<?> aClass = Class.forName("com.techlogix.mobilinkcustomer.ReactNativeFlipper");
         aClass
             .getMethod("initializeFlipper", Context.class, ReactInstanceManager.class)
             .invoke(null, context, reactInstanceManager);
