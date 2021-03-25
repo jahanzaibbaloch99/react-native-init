@@ -13,8 +13,6 @@ export function requestPermission() {
 
 export function initFCM() {
 
-	requestPermission();
-
 	messaging().onMessage((message) => {
 
 		var notification = message.notification;
