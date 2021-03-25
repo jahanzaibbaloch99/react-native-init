@@ -11,6 +11,8 @@ initFCM();
 handleDeeplinks();
 enableInAppMessages();
 
+getToken().then(token => console.log('token', token));
+
 logEvent('appInit', {
 	awesome: true,
 }).then(() => console.log('App Logged!'));
