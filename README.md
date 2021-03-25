@@ -25,9 +25,14 @@
 5. Toasts
 6. Drawer
 
+#### Installation Instructions:
+1. Simply download this repository
+2. Change bundle identifier and package name for your own application by following below instructions
+3. Add Google services.json file in android and ios directories in their proper location for app to build
+
 #### Renaming package for production
 
-To upload this app on Google Play, you'll have to rename the package to something unique. Follow these steps to rename the app for React Native version 0.64.4:
+To upload this app on Google Play or App Store, you'll have to rename the app to something unique. Follow these steps for React Native version 0.63.4:
 
 ##### For iOS:
 
