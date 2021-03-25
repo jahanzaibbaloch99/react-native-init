@@ -10,7 +10,7 @@ import PushNotificationiOS from "react-native-push-notification";
 
 initFCM();
 handleDeeplinks();
-checkForAppUpdates();
+// checkForAppUpdates();
 
 getToken().then((token) => console.log(token));
 
