@@ -7,9 +7,6 @@ import messaging from '@react-native-firebase/messaging';
 
 export function initFCM() {
 
-	// messaging().getToken().then((token) => {
-	// 	store.dispatch(setFCMToken(token));
-	// });
 	messaging().onMessage((message) => {
 
 		var notification = message.notification;

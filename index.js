@@ -3,9 +3,15 @@ import App from './App';
 import { name as appName } from './app.json';
 import handleDeeplinks from './src/Helpers/Deeplinks';
 
-import { initFCM } from "./src/Helpers/FCM";
+import { initFCM, getToken } from "./src/Helpers/FCM";
+
+import PushNotificationiOS from "react-native-push-notification";
+
+// PushNotificationiOS.requestPermissions().then((a) => console.log('a', a));
 
 initFCM();
-handleDeeplinks();
+// handleDeeplinks();
+
+getToken().then((token) => console.log(token));
 
 AppRegistry.registerComponent(appName, () => App);
