@@ -3,9 +3,17 @@
 import store from "../Stores";
 import { setFCMToken } from "../Stores/Actions";
 import PushNotification from "react-native-push-notification";
+import PushNotificationiOS from "react-native-push-notification";
 import messaging from '@react-native-firebase/messaging';
 
+export function requestPermission() {
+	console.log('requestPermission');
+	PushNotificationiOS.requestPermissions().then((a) => console.log('PushNotificationiOS	', a));
+}
+
 export function initFCM() {
+
+	requestPermission();
 
 	messaging().onMessage((message) => {
 

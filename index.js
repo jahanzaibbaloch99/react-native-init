@@ -3,15 +3,16 @@ import App from './App';
 import { name as appName } from './app.json';
 import handleDeeplinks from './src/Helpers/Deeplinks';
 import { initFCM, getToken } from "./src/Helpers/FCM";
-import PushNotificationiOS from "react-native-push-notification";
+import { disableInAppMessages, enableInAppMessages } from "./src/Helpers/InAppMessaging";
 // import checkForAppUpdates from "./src/Helpers/AutoUpdate";
 
-// PushNotificationiOS.requestPermissions().then((a) => console.log('a', a));
-
+disableInAppMessages();
 initFCM();
 handleDeeplinks();
-// checkForAppUpdates();
 
-getToken().then((token) => console.log(token));
+// checkForAppUpdates();
+// getToken().then((token) => console.log(token));
+
+enableInAppMessages();
 
 AppRegistry.registerComponent(appName, () => App);
