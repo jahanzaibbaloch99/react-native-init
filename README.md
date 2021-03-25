@@ -13,16 +13,17 @@
 7. Stripe helper
 8. Deeplinks helper
 9. App auto update helper
+10. Firebase InApp Messaging support
+11. Firebase Events Logging helper
 
 #### Todo list for future:
 
-1. Firebase InApp messaging
-2. Regex helpers
-3. Permissions
-4. SVG images
-5. Redux Saga
-6. Toasts
-7. Drawer
+1. Regex helpers
+2. Permissions
+3. SVG images
+4. Redux Saga
+5. Toasts
+6. Drawer
 
 #### Renaming package for production
 
