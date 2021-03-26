@@ -1212,6 +1212,11 @@
   resolved "https://registry.yarnpkg.com/@react-native-firebase/messaging/-/messaging-11.1.1.tgz#e495fd2b25a33c064061077377ef7fa48de49e01"
   integrity sha512-56iVLG1zB9Z+EHuKMFE6xbYg2oCDSZrdrEtGJXURI5zQ484SsJr1uxwXeFBiuydxn5IyCxXyP/0oN9jq3kzQaQ==
 
+"@react-native-firebase/remote-config@^11.1.2":
+  version "11.1.2"
+  resolved "https://registry.yarnpkg.com/@react-native-firebase/remote-config/-/remote-config-11.1.2.tgz#b82f704a8a0f409e5781bb5b1cfb22fb37477eed"
+  integrity sha512-Eo0Xrswxi5iBk6FZa3y66MSIQRdaIgkUGjfbQ3AhqGpPusUzxu8dCSG/dWJsQLh2HIW5bxe1HzCPFveP988Drg==
+
 "@react-navigation/core@^5.15.2":
   version "5.15.2"
   resolved "https://registry.yarnpkg.com/@react-navigation/core/-/core-5.15.2.tgz#6aa374c7bcb6ffcaac8e2a7f8bdb2f9aba469b31"
