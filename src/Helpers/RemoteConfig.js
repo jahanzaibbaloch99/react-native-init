@@ -2,23 +2,32 @@
 
 import remoteConfig from '@react-native-firebase/remote-config';
 
-const defaults = {
-	awesome_new_feature: 'disabled',
-	some_key: 'ZZZ',
-};
+export function initRemoteConfig(defaultValues = {}) {
 
-export function init() {
+	console.log('init Remote Config', defaultValues);
 
-	console.log('init Remote Config');
-
+	// Activate previously fetched values
 	remoteConfig().activate();
 
-	return remoteConfig()
-		.setDefaults(defaults)
-		.then(() => remoteConfig().fetch())
-		.then(() => {
-			var allValues = remoteConfig().getAll();
-			console.log('allValues', allValues);
-		});
+	// Fetch new values and store
+	remoteConfig()
+		.setDefaults(defaultValues)
+		.then(() => remoteConfig().fetch(defaultValues.remoteConfigExpirationDuration));
+
+}
+
+export function get(key, type = 'string') {
+
+	switch (type) {
+		case 'number':
+			return remoteConfig().getNumber(key);
+			break;
+		case 'string':
+			return remoteConfig().getString(key);
+			break;
+		default:
+			return remoteConfig().getValue();
+			break;
+	}
 
 }
