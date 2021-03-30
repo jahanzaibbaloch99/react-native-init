@@ -16,7 +16,7 @@ export function initRemoteConfig(defaultValues = {}) {
 
 }
 
-export function get(key, type = 'string') {
+export function getConfigVal(key, type = 'string') {
 
 	switch (type) {
 		case 'number':
