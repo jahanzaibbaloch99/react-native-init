@@ -18,7 +18,6 @@ const screens = {
 const Drawer = createDrawerNavigator();
 
 function DrawerContent(props) {
-	console.log('map', props.state.routes);
 	return (
 		<DrawerContentScrollView {...props}>
 			<View style={{ alignItems: 'center', marginVertical: 50, }}>
