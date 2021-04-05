@@ -17,6 +17,7 @@
     "@react-native-firebase/in-app-messaging": "^11.1.2",
     "@react-native-firebase/messaging": "^11.1.1",
     "@react-native-firebase/remote-config": "^11.1.2",
+    "@react-navigation/drawer": "^5.12.5",
     "@react-navigation/native": "^5.9.2",
     "@react-navigation/stack": "^5.14.2",
     "axios": "^0.21.1",

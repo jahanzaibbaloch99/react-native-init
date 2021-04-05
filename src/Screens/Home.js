@@ -10,20 +10,6 @@ import { PostsService } from "../Services";
 
 class Home extends Component {
 
-	async componentDidMount() {
-
-		this.props.sayHelloWorld('React Native Simple Boilerplate');
-
-		// var response = await PostsService.getPosts();
-
-		// console.log('response', response.data.length);
-
-		// response = await PostsService.getPost(1);
-
-		// console.log('response 2', response.data);
-
-	}
-
 	getAppIntro() {
 		return (
 			<View>

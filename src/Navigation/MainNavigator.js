@@ -2,31 +2,24 @@ import 'react-native-gesture-handler';
 import React from 'react';
 
 import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from "@react-navigation/stack";
 
 import { connect } from "react-redux";
 import { setIsLoading } from "../Stores/Actions/";
 
-import Home from "../Screens/Home";
-import Details from '../Screens/Details';
 import { AppLoader } from '../Components';
-
-const Stack = createStackNavigator();
+import DrawerMenu from './DrawerMenu';
 
 class MainNavigator extends React.Component {
 
 	componentDidMount() {
-		setTimeout(() => this.props.setIsLoading(false), 1500);
+		setTimeout(() => this.props.setIsLoading(false), 100);
 	}
 
 	render() {
 		return (
 			<NavigationContainer>
 				<>
-					<Stack.Navigator initialRouteName="Home">
-						<Stack.Screen name="Home" component={Home} />
-						<Stack.Screen name="Detail" component={Details} />
-					</Stack.Navigator>
+					<DrawerMenu />
 					{ this.props.isLoading && <AppLoader />}
 				</>
 			</NavigationContainer>
