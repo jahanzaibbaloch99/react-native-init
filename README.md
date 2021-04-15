@@ -24,6 +24,10 @@
 4. Redux Saga
 5. Toasts
 6. Drawer
+7. Splashscreen
+8. Change App Icon to generic
+9. Google style drawer menu
+10. No content found component 
 
 #### Installation Instructions:
 1. Simply download this repository
