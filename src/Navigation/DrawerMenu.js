@@ -1,20 +1,13 @@
 
 import React from "react";
-
 import {
 	createDrawerNavigator, DrawerContentScrollView, DrawerItem, DrawerItemList
 } from "@react-navigation/drawer";
-
-import Settings from '../Screens/Settings';
-import MainScreens from './MainScreens';
-import { Image, Text, View } from 'react-native';
+import {createStackNavigator,HeaderBackButton} from "@react-navigation/stack"
+import { Image, View,TouchableOpacity } from 'react-native';
+import {MainScreens,DrawerScreens } from "../Navigation/Screens"
 import Icons from "../Assets/index";
-
-const screens = {
-	'Home': MainScreens,
-	Settings,
-};
-
+const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
 
 function DrawerContent(props) {
@@ -29,22 +22,42 @@ function DrawerContent(props) {
 		</DrawerContentScrollView>
 	);
 }
-
+ const HomeStack = function() {
+	return (<Stack.Navigator>
+		{Object.keys(MainScreens).map((key) => <Stack.Screen key={key} name={key} component={MainScreens[key]} options={( nav ) => {
+					return {
+						headerLeft: () => ( nav.route.name === "Home" ?
+							<TouchableOpacity onPress={() => {
+								nav.navigation.toggleDrawer();
+							}}>
+								<Image
+									style={{ width: 18, height: 15, marginLeft: 10, }}
+									source={Icons.hamburgerIcon}
+								/>
+							</TouchableOpacity> : <HeaderBackButton onPress={() => nav.navigation.goBack() }/>
+						),
+					} 
+				}} />
+		) }
+	</Stack.Navigator>)
+}
+ const DrawerStack = function() {
+	return (<Stack.Navigator>
+		{Object.keys(DrawerScreens).map((key) => <Stack.Screen key={key} name={key} component={DrawerScreens[key]} options={( nav ) => {
+					return {
+						headerLeft: () => (<HeaderBackButton onPress={() => nav.navigation.goBack() }/>),
+					} 
+				}}  />
+		)}
+	</Stack.Navigator>)
+}
 function DrawerMenu() {
 	return (
 		<Drawer.Navigator
-			drawerContent={(props) => DrawerContent(props)}
-			options={{
-				headerShown: true,
-				swipeEnabled: false,
-			}}>
-			{
-				Object.keys(screens).map((key) => {
-					return <Drawer.Screen key={key} options={{
-						swipeEnabled: false,
-					}} name={key} component={screens[key]} />;
-				})
-			}
+		overlayColor="transparent"
+			drawerContent={(props) => <DrawerContent {...props}/>}>
+		<Drawer.Screen component={HomeStack} name="Home" />
+		<Drawer.Screen component={DrawerStack} name="Settings" />
 		</Drawer.Navigator>
 	);
 }
