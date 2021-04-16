@@ -8,14 +8,14 @@ import { logEvent } from "./src/Helpers/FirebaseEvents";
 
 import defaultAppConfig from "./src/Config";
 import { initRemoteConfig } from "./src/Helpers/RemoteConfig";
-initRemoteConfig(defaultAppConfig);
 
-disableInAppMessages();
-initFCM();
-handleDeeplinks();
-logEvent('appInit', {
-	awesome: true,
-}).then(() => console.log('App Logged!'));
-enableInAppMessages();
+// initRemoteConfig(defaultAppConfig);
+// disableInAppMessages();
+// initFCM();
+// handleDeeplinks();
+// logEvent('appInit', {
+// 	awesome: true,
+// }).then(() => console.log('App Logged!'));
+// enableInAppMessages();
 
 AppRegistry.registerComponent(appName, () => App);
