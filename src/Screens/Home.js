@@ -31,8 +31,8 @@ class Home extends Component {
 					A <Text style={{ fontWeight: 'bold', }}>FastImage</Text> component that caches image
 				</Text>
 				<Button title={"Navigate To Other Screen"} onPress={() => {
-					this.props.navigation.navigate('Detail');
-				}}></Button>
+					this.props.navigation.navigate('Details');
+				}} />
 			</View>
 		);
 	}

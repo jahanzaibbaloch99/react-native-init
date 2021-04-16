@@ -12,7 +12,7 @@ import DrawerMenu from './DrawerMenu';
 class MainNavigator extends React.Component {
 
 	componentDidMount() {
-		setTimeout(() => this.props.setIsLoading(false), 100);
+		// setTimeout(() => this.props.setIsLoading(false), 100);
 	}
 
 	render() {

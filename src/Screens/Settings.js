@@ -1,10 +1,17 @@
 import React from "react";
-import { Text, View } from 'react-native';
+import { Button, Text, View } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 export default function Settings() {
+
+	const navigation = useNavigation();
+
 	return (
 		<View>
-			<Text>Hello World</Text>
+			<Text>Settings Screen</Text>
+			<Button title={"Settings 2"} onPress={() => {
+				navigation.navigate('Settings2');
+			}} />
 		</View>
 	);
 }
