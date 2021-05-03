@@ -1,64 +1,31 @@
 import React, { Component } from "react";
 import { View, Text, StyleSheet, Button } from 'react-native';
-
-import { connect } from "react-redux";
-import { sayHelloWorld } from "../Stores/Actions";
-
 import { FastImage } from "../Components";
 
-import { PostsService } from "../Services";
+export default function Home(props) {
 
-class Home extends Component {
+	return (
+		<View>
 
-	getAppIntro() {
-		return (
-			<View>
-				<Text style={styles.heading}>
-					{this.props.text}
-				</Text>
-				<Text style={styles.paragraph}>
-					A simple react native project with only essential things that are required to build a great app
-				</Text>
-			</View>
-		);
-	}
+			<AppIntro title={"React Native Simple Boilerplate"} />
 
-	getFastImageDemo() {
-		return (
-			<View>
-				<FastImage path={'https://wallpapercave.com/wp/wZYPtOK.jpg'} imageStyle={styles.sampleImage} />
-				<Text style={styles.paragraph}>
-					A <Text style={{ fontWeight: 'bold', }}>FastImage</Text> component that caches image
-				</Text>
-				<Button title={"Navigate To Other Screen"} onPress={() => {
-					this.props.navigation.navigate('Details');
-				}} />
-			</View>
-		);
-	}
+		</View>
+	);
 
-	render() {
-		return (
-			<View>
-
-				{this.getAppIntro()}
-
-				{this.getFastImageDemo()}
-
-			</View>
-		);
-	}
 }
 
-const mapStateToProps = ({ HelloWorldReducer }) => {
-	return {
-		text: HelloWorldReducer?.text,
-	};
-};
-
-const mapDispatchToProps = (dispatch) => ({
-	sayHelloWorld: (payload) => dispatch(sayHelloWorld(payload)),
-});
+function AppIntro(props) {
+	return (
+		<View>
+			<Text style={styles.heading}>
+				{props.title}
+			</Text>
+			<Text style={styles.paragraph}>
+				A simple react native project with only essential things that are required to build a great app
+				</Text>
+		</View>
+	);
+}
 
 const styles = StyleSheet.create({
 	heading: {
@@ -80,6 +47,3 @@ const styles = StyleSheet.create({
 		alignSelf: 'center'
 	}
 });
-
-
-export default connect(mapStateToProps, mapDispatchToProps)(Home);
