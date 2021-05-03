@@ -6,7 +6,11 @@ platform :ios, '10.0'
 target 'MyApp' do
   config = use_native_modules!
 
-  use_react_native!(:path => config["reactNativePath"])
+  use_react_native!(
+    :path => config[:reactNativePath],
+    # to enable hermes on iOS, change `false` to `true` and then install pods
+    :hermes_enabled => false
+  )
 
   target 'MyAppTests' do
     inherit! :complete
@@ -16,22 +20,13 @@ target 'MyApp' do
   # Enables Flipper.
   #
   # Note that if you have use_frameworks! enabled, Flipper will not work and
-  # you should disable these next few lines.
-use_flipper!({ 'Flipper' => '0.74.0' })
-	  post_install do |installer|
-    flipper_post_install(installer)
+  # you should disable the next line.
+  use_flipper!()
+
+  post_install do |installer|
+    react_native_post_install(installer)
   end
 end
-
-target 'MyApp-tvOS' do
-  # Pods for MyApp-tvOS
-
-  target 'MyApp-tvOSTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-end
-
 target 'ImageNotification' do
   pod 'Firebase/Messaging', '~> 7.8.1' # eg 6.31.0
 end
