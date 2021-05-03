@@ -1,40 +1,31 @@
 import 'react-native-gesture-handler';
 import React from 'react';
 
+import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
 
 import { connect } from "react-redux";
 import { setIsLoading } from "../Stores/Actions/";
 
 import { AppLoader } from '../Components';
-import DrawerMenu from './DrawerMenu';
 
-class MainNavigator extends React.Component {
+import { MainScreens } from "./Screens";
 
-	componentDidMount() {
-		// setTimeout(() => this.props.setIsLoading(false), 100);
-	}
+const Stack = createStackNavigator();
 
-	render() {
-		return (
-			<NavigationContainer>
-				<>
-					<DrawerMenu />
-					{ this.props.isLoading && <AppLoader />}
-				</>
-			</NavigationContainer>
-		);
-	}
+export default function MainNavigator(props) {
+	return (
+		<NavigationContainer>
+			<>
+				<Stack.Navigator>
+					{Object.keys(MainScreens).map((key) => {
+						return (
+							<Stack.Screen key={key} name={key} component={MainScreens[key]} />
+						);
+					}
+					)}
+				</Stack.Navigator>
+			</>
+		</NavigationContainer>
+	);
 }
-
-const mapStateToProps = ({ AppReducer }) => {
-	return {
-		isLoading: AppReducer.isLoading,
-	};
-};
-
-const mapDispatchToProps = (dispatch) => ({
-	setIsLoading: (payload) => dispatch(setIsLoading(payload))
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(MainNavigator);
