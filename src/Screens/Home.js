@@ -6,9 +6,7 @@ export default function Home(props) {
 
 	return (
 		<View>
-
-			<AppIntro title={"React Native Simple Boilerplate"} />
-
+			<AppIntro title={"React Native Simple Boilerplate"} {...props} />
 		</View>
 	);
 
@@ -22,7 +20,12 @@ function AppIntro(props) {
 			</Text>
 			<Text style={styles.paragraph}>
 				A simple react native project with only essential things that are required to build a great app
-				</Text>
+			</Text>
+			<View style={{ alignItems: 'center', }}>
+				<Button title={"Click Me!"} onPress={() => {
+					props.navigation.navigate('Details');
+				}} />
+			</View>
 		</View>
 	);
 }
