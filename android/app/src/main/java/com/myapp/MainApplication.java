@@ -14,10 +14,8 @@ import com.facebook.react.ReactPackage;
 import com.facebook.soloader.SoLoader;
 import java.lang.reflect.InvocationTargetException;
 import java.util.List;
-import androidx.multidex.MultiDexApplication; // <-- ADD THIS IMPORT
 
-
-public class MainApplication extends MultiDexApplication  implements ReactApplication {
+public class MainApplication extends Application  implements ReactApplication {
 
   private final ReactNativeHost mReactNativeHost =
       new ReactNativeHost(this) {
@@ -64,8 +62,6 @@ public class MainApplication extends MultiDexApplication  implements ReactApplic
 		
 		SoLoader.init(this, /* native exopackage */ false);
     initializeFlipper(this, getReactNativeHost().getReactInstanceManager());
-
-
 
   }
 
