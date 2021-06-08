@@ -4,7 +4,7 @@ import Icon from 'react-native-vector-icons/FontAwesome5'
 
 export default function Form() {
     return (
-        <View style={{ paddingHorizontal: 10, backgroundColor: '#fff', flex: 1, }}>
+        <View style={{ paddingHorizontal: 10, flex: 1, }}>
             <ScrollView>
                 <View style={{ flexDirection: 'row' }}>
                     <View style={{ flex: 1, }}>
@@ -38,14 +38,14 @@ export default function Form() {
     )
 }
 
-function InputBlock({ placeholder, label, icon }) {
+function InputBlock({ placeholder, label, icon, errorText }) {
     return (
         <View style={{ margin: 5, }}>
             <Text style={{ fontWeight: 'bold', }}>{label}</Text>
             <View style={{
                 elevation: 2,
                 marginVertical: 5,
-                borderRadius: 10,
+                borderRadius: 7,
                 backgroundColor: '#fff',
             }}>
                 <TextInput
@@ -63,7 +63,7 @@ function InputBlock({ placeholder, label, icon }) {
                         top: 0,
                         right: 0,
                         bottom: 0,
-                        paddingHorizontal: 7,
+                        paddingHorizontal: 10,
                         alignItems: 'center',
                         justifyContent: 'center',
                         backgroundColor: '#fff',
@@ -74,6 +74,7 @@ function InputBlock({ placeholder, label, icon }) {
                     </View>
                 }
             </View>
+            <Text style={{ color: '#f00', fontSize: 12, }}>{errorText}</Text>
         </View>
     );
 }
