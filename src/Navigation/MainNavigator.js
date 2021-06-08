@@ -9,16 +9,14 @@ const Stack = createStackNavigator();
 export default function MainNavigator(props) {
 	return (
 		<NavigationContainer>
-			<>
-				<Stack.Navigator>
-					{Object.keys(MainScreens).map((key) => {
-						return (
-							<Stack.Screen key={key} name={key} component={MainScreens[key]} />
-						);
-					}
-					)}
-				</Stack.Navigator>
-			</>
+			<Stack.Navigator>
+				{Object.keys(MainScreens).map((key) => {
+					return (
+						<Stack.Screen key={key} name={key} component={MainScreens[key]} />
+					);
+				}
+				)}
+			</Stack.Navigator>
 		</NavigationContainer>
 	);
 }

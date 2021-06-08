@@ -24,9 +24,14 @@ function AppIntro(props) {
 			<Text style={styles.paragraph}>
 				A simple react native project with only essential things that are required to build a great app
 			</Text>
-			<View style={{ marginHorizontal: 30 }}>
+			<View style={{ marginHorizontal: 30, marginVertical: 10, }}>
 				<Button title={"Click Me!"} onPress={() => {
 					props.navigation.navigate('Details');
+				}} />
+			</View>
+			<View style={{ marginHorizontal: 30, marginVertical: 10, }}>
+				<Button title={"Form.js"} onPress={() => {
+					props.navigation.navigate('Form');
 				}} />
 			</View>
 		</View>
