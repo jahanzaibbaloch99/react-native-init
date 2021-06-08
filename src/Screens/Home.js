@@ -1,6 +1,8 @@
 import React, { Component } from "react";
-import { View, Text, StyleSheet, Button } from 'react-native';
+import { View, Text, StyleSheet, Button, Image } from 'react-native';
 import { FastImage } from "../Components";
+import { Images } from "../Assets";
+import { Colors } from "../Themes";
 
 export default function Home(props) {
 
@@ -15,13 +17,14 @@ export default function Home(props) {
 function AppIntro(props) {
 	return (
 		<View>
+			<Image style={{ alignSelf: 'center', marginVertical: 20 }} source={Images.hamburgerIcon} />
 			<Text style={styles.heading}>
 				{props.title}
 			</Text>
 			<Text style={styles.paragraph}>
 				A simple react native project with only essential things that are required to build a great app
 			</Text>
-			<View style={{ alignItems: 'center', }}>
+			<View style={{ marginHorizontal: 30 }}>
 				<Button title={"Click Me!"} onPress={() => {
 					props.navigation.navigate('Details');
 				}} />
@@ -34,13 +37,15 @@ const styles = StyleSheet.create({
 	heading: {
 		fontSize: 20,
 		paddingTop: 30,
-		paddingBottom: 10,
 		textAlign: 'center',
 		fontWeight: 'bold',
+		color: Colors.greenDark
 	},
 	paragraph: {
 		padding: 15,
-		textAlign: 'center'
+		marginVertical: 20,
+		textAlign: 'center',
+		color: Colors.greenLight
 	},
 	sampleImage: {
 		width: 100,
