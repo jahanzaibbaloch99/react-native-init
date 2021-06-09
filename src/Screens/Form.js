@@ -3,17 +3,17 @@ import { View, Text, TextInput, ScrollView, Button } from 'react-native'
 import Icon from 'react-native-vector-icons/FontAwesome5'
 import { ErrorMessage, Formik } from 'formik';
 import * as Yup from 'yup';
-import { ErrorStrings } from "../Helpers/Strings";
+import { STRING_REQUIRED, EMAIL_INVALID } from "utils/ErrorStrings";
 
 export default function Form() {
 
     const initialValues = { first_name: '', last_name: '', email: '', age: '', };
 
     const formSchema = Yup.object().shape({
-        first_name: Yup.string().trim().required(ErrorStrings.string_required).min(5).max(16),
-        last_name: Yup.string().trim().required(ErrorStrings.string_required).min(5).max(16),
-        email: Yup.string().trim().email('This is not a valid email address').required(ErrorStrings.string_required),
-        age: Yup.number().min(1).max(25).required(ErrorStrings.string_required)
+        first_name: Yup.string().trim().required(STRING_REQUIRED).min(5).max(16),
+        last_name: Yup.string().trim().required(STRING_REQUIRED).min(5).max(16),
+        email: Yup.string().trim().email(EMAIL_INVALID).required(STRING_REQUIRED),
+        age: Yup.number().min(1).max(25).required(STRING_REQUIRED)
     });
 
     const onFormSubmit = (values) => {
