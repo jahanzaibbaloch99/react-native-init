@@ -28,11 +28,11 @@ const Login = (props) => {
                 <View style={styles.secondaryContainer}>
                     <View>
                         <View>
-                            <View style={{ marginVertical: 5 }}>
-                                <Text style={{ fontSize: 24, fontWeight: "bold" }}>Login</Text>
+                            <View style={styles.headingMargin}>
+                                <Text style={styles.loginHeading}>Login</Text>
                             </View>
-                            <View style={{ marginVertical: 5 }}>
-                                <Text style={{ color: "black", opacity: 0.3 }}>Sign in to continue</Text>
+                            <View style={styles.headingMargin}>
+                                <Text style={styles.subHeading}>Sign in to continue</Text>
                             </View>
                         </View>
                     </View>
@@ -53,7 +53,7 @@ const Login = (props) => {
                                                 placeholder={'ex: john@doe.com'}
                                                 icon={"envelope"}
                                             />
-                                            <View style={{ marginVertical: 5 }}>
+                                            <View style={styles.headingMargin}>
                                                 <ErrorMessage component={ErrorText} name="email" />
                                             </View>
                                         </View>
@@ -67,15 +67,15 @@ const Login = (props) => {
                                                 icon={"lock"}
                                                 isSecured={true}
                                             />
-                                            <View style={{ marginVertical: 5 }}>
+                                            <View style={styles.headingMargin}>
                                                 <ErrorMessage component={ErrorText} name="password" />
                                             </View>
                                         </View>
-                                        <TouchableOpacity onPress={() => { props.navigation.navigate("ForgotPassword") }} style={{ marginVertical: 10, justifyContent: "center", padding: 10, alignItems: "center" }}>
-                                            <Text style={{ color: "#00d563", fontWeight: "bold" }} >Forgot Password?</Text>
+                                        <TouchableOpacity onPress={() => { props.navigation.navigate("ForgotPassword") }} style={{ ...styles.TouchableButton, padding: 10, }}>
+                                            <Text style={styles.actionHeading} >Forgot Password?</Text>
                                         </TouchableOpacity>
-                                        <TouchableOpacity onPress={handleSubmit} style={{ justifyContent: "center", padding: 15, backgroundColor: "#00d563", borderRadius: 10, alignItems: "center" }}>
-                                            <Text style={{ color: "white", fontWeight: "bold" }} >Login</Text>
+                                        <TouchableOpacity onPress={handleSubmit} style={{ ...styles.TouchableButton, padding: 15, backgroundColor: "#00d563" }}>
+                                            <Text style={styles.buttonText} >Login</Text>
                                         </TouchableOpacity>
                                     </View>
                                 )}
@@ -103,6 +103,7 @@ const styles = StyleSheet.create({
     flexContainer: {
         flex: 1
     },
+    loginHeading: { fontSize: 24, fontWeight: "bold" },
     innerContainer: {
         flex: 1,
         justifyContent: "center",
@@ -125,5 +126,10 @@ const styles = StyleSheet.create({
         borderTopLeftRadius: 25,
         borderTopRightRadius: 25,
         padding: 25
-    }
+    },
+    subHeading: { color: "black", opacity: 0.3 },
+    headingMargin: { marginVertical: 5 },
+    actionHeading: { color: "#00d563", fontWeight: "bold" },
+    buttonText: { color: "white", fontWeight: "bold" },
+    TouchableButton: { marginVertical: 10, justifyContent: "center", alignItems: "center" }
 })
