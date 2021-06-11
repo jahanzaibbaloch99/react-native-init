@@ -1,8 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import { View, TouchableOpacity, Text } from "react-native";
 import Icon from "react-native-vector-icons/FontAwesome5";
-import { Header, DropDown } from "../../Components/"
-
+import { Header, DropDown, Datepicker } from "../../Components/"
 
 
 const AddEmploye = (props) => {
@@ -15,6 +14,9 @@ const AddEmploye = (props) => {
     const staticData = [
         "All", "Active", "Inactive", "Terminated"
     ];
+    const [selectedDate, setSelectedDate] = useState(null);
+    const [toggle, setToggle] = useState(false)
+
     return (
         <View style={{ flex: 1, backgroundColor: "white" }}>
             <Header
@@ -24,7 +26,7 @@ const AddEmploye = (props) => {
 
             />
             <View style={{ flex: 1, padding: 15 }}>
-                <View style={{ flexDirection: "row", flex: 1 }}>
+                <View style={{ flexDirection: "row" }}>
                     <View style={{ flex: 1, marginHorizontal: 5 }}>
                         <View style={{ marginVertical: 2 }}>
                             <Text style={{ fontWeight: "bold" }}>Status*</Text>
@@ -69,6 +71,16 @@ const AddEmploye = (props) => {
                             </DropDown>
                         </View>
                     </View>
+                </View>
+                <View style={{ marginVertical: 10 }}>
+                    <Datepicker
+                        togglePicker={() => setToggle(!toggle)}
+                        toggle={toggle}
+                        onSelectedChange={date => { setSelectedDate(date), setToggle(!toggle) }}
+                        selectedDate={selectedDate}
+                        icon={"calendar-alt"}
+                        iconColor={"#00d563"}
+                    />
                 </View>
             </View>
         </View>

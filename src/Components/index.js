@@ -3,10 +3,12 @@ import AppLoader from './AppLoader';
 import InputBlock from './InputBlock';
 import DropDown from "./DropDown";
 import Header from "./Header";
+import Datepicker from "./Datepicker"
 export {
 	FastImage,
 	AppLoader,
 	InputBlock,
 	Header,
-	DropDown
+	DropDown,
+	Datepicker
 };
