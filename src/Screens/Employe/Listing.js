@@ -1,24 +1,9 @@
 import React from "react";
 import { View, Text, TouchableOpacity, ScrollView } from 'react-native';
-import { InputBlock, DropDown } from "../../Components";
+import { InputBlock, DropDown, Header } from "../../Components";
 import Icon from "react-native-vector-icons/FontAwesome5"
 
-const Header = (props) => {
-    return (<View style={{ backgroundColor: 'white' }}>
-        <View style={{ justifyContent: "space-between", flexDirection: "row", padding: 10, marginTop: 20, marginBottom: 5 }}>
-            <View style={{ flexDirection: "row", alignItems: "center" }}>
-                {/* <Text>Logo</Text> */}
-                <Text style={{ fontWeight: "bold", fontSize: 18 }}>Employees</Text>
-            </View>
-            <View style={{ alignItems: "center" }}>
-                <TouchableOpacity>
-                    <Text style={{ fontSize: 16, fontWeight: 'bold', color: "#00d563" }}>+Employee</Text>
-                </TouchableOpacity>
-            </View>
-        </View>
-    </View>
-    )
-};
+
 
 const ListItem = (props) => {
     const data = [
@@ -46,19 +31,24 @@ const ListItem = (props) => {
     )
 }
 const Listing = (props) => {
-    const staticData = [
-        "All", "Active", "Inactive", "Terminated"
-    ];
-    const [selected, setSelected] = React.useState(-1)
+
     React.useEffect(() => {
         props.navigation.setOptions({
             headerShown: false
         })
     }, [])
     const [index, setIndex] = React.useState(-1)
+    const staticData = [
+        "All", "Active", "Inactive", "Terminated"
+    ];
     return (
         <View style={{ flex: 1 }}>
-            <Header />
+            <Header
+                isBack={false}
+                title={"Employee"}
+                actionTitle={"Add Employee"}
+                onPress={() => props.navigation.navigate("AddEmploye")}
+            />
             <ScrollView nestedScrollEnabled={true} style={{ padding: 10 }}>
                 <View style={{ flexDirection: "row", marginVertical: 10 }}>
                     <View style={{ flex: 2, marginHorizontal: 2 }}>

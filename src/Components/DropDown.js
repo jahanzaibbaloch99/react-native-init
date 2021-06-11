@@ -6,13 +6,12 @@ function Dropdown(props) {
 
   return (<>
     <ModalDropdown
-
       rootContainerStyle={{
         flex: 1,
         backgroundColor: "white",
         borderRadius: 10,
         justifyContent: "center",
-        borderColor: "black",
+        borderColor: "#e5eaed",
         borderWidth: 0.5,
       }}
       labelContainerStyle={{
