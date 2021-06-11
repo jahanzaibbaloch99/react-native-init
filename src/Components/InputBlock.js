@@ -5,7 +5,7 @@ import Icon from "react-native-vector-icons/FontAwesome5";
 export default function InputBlock({ placeholder, label, icon, keyboardType, onChangeText, onBlur, value, isSecured }) {
     return (
         <View>
-            <Text style={{ fontWeight: 'bold', marginVertical: 2 }}>{label}</Text>
+            {label && <Text style={{ fontWeight: 'bold', marginVertical: 2 }}>{label}</Text>}
             <View style={{
                 elevation: 2,
                 borderRadius: 7,
