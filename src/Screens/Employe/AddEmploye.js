@@ -1,21 +1,35 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { View, TouchableOpacity, Text } from "react-native";
 import Icon from "react-native-vector-icons/FontAwesome5";
 import { Header, DropDown, Datepicker } from "../../Components/"
-
-
 const AddEmploye = (props) => {
     React.useEffect(() => {
         props.navigation.setOptions({
             headerShown: false
         })
     }, [])
+
+    const [isDatePickerVisible, setDatePickerVisibility] = useState(false);
+    const [selectedDate, setSelectedDate] = useState(new Date().toLocaleDateString());
+    const showDatePicker = () => {
+        setDatePickerVisibility(true);
+    };
+
+    const hideDatePicker = () => {
+        setDatePickerVisibility(false);
+    };
+
+    const handleConfirm = (date) => {
+        const localeDate = date.toLocaleDateString()
+        setSelectedDate(localeDate)
+        hideDatePicker();
+    };
+
     const [index, setIndex] = React.useState(-1)
     const staticData = [
         "All", "Active", "Inactive", "Terminated"
     ];
-    const [selectedDate, setSelectedDate] = useState(null);
-    const [toggle, setToggle] = useState(false)
+
 
     return (
         <View style={{ flex: 1, backgroundColor: "white" }}>
@@ -74,12 +88,13 @@ const AddEmploye = (props) => {
                 </View>
                 <View style={{ marginVertical: 10 }}>
                     <Datepicker
-                        togglePicker={() => setToggle(!toggle)}
-                        toggle={toggle}
-                        onSelectedChange={date => { setSelectedDate(date), setToggle(!toggle) }}
-                        selectedDate={selectedDate}
+                        onConfirm={handleConfirm}
+                        onCancel={hideDatePicker}
+                        isVisible={isDatePickerVisible}
                         icon={"calendar-alt"}
                         iconColor={"#00d563"}
+                        showDatePicker={showDatePicker}
+                        date={new Date(selectedDate)}
                     />
                 </View>
             </View>
