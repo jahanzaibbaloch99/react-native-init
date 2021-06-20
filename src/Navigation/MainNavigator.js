@@ -9,7 +9,7 @@ const Stack = createStackNavigator();
 export default function MainNavigator(props) {
 	return (
 		<NavigationContainer >
-			<Stack.Navigator initialRouteName={"Listing"}>
+			<Stack.Navigator initialRouteName={"Search"}>
 				{Object.keys(MainScreens).map((key) => {
 					return (
 						<Stack.Screen key={key} name={key} component={MainScreens[key]} />

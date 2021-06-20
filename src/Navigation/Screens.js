@@ -4,7 +4,8 @@ import Form from './../Screens/Form';
 import Login from './../Screens/Register/Login';
 import ForgotPassword from './../Screens/Register/ForgotPassword';
 import Listing from "../Screens/Employe/Listing/";
-import AddEmploye from "../Screens/Employe/AddEmploye"
+import AddEmploye from "../Screens/Employe/AddEmploye";
+import Search from "../Screens/Search";
 const MainScreens = {
 	Home,
 	Details,
@@ -12,7 +13,8 @@ const MainScreens = {
 	Login,
 	ForgotPassword,
 	Listing,
-	AddEmploye
+	AddEmploye,
+	Search
 };
 
 export {
