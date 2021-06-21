@@ -13,13 +13,15 @@ const Search = (props) => {
 
     return (
         <View style={{ backgroundColor: 'white', flex: 1 }}>
-            <View style={{ justifyContent: "space-between", flexDirection: "row", padding: 15, marginTop: 10, marginBottom: 5 }}>
-                <View style={{ flexDirection: "row", alignItems: "center", marginHorizontal: 5, marginRight: 20 }}>
+            <View style={{ justifyContent: "space-between", flexDirection: "row", padding: 10, marginTop: 10, marginBottom: 5 }}>
+                <View style={{ flexDirection: "row", alignItems: "center", marginRight: 20 }}>
                     <TouchableOpacity onPress={() => props.navigation.goBack()}>
-                        <Icon name='arrow-left' size={25} color="#00d563" />
+                        <Icon name='arrow-left' size={20} color="#00d563" />
                     </TouchableOpacity>
                 </View>
-                <View style={{ flex: 1, height: 40, justifyContent: "center" }}><TextInput placeholderTextColor="#aaa" placeholder="Search" style={{ paddingHorizontal: 10, backgroundColor: "#eee", borderRadius: 10, color: "black" }} /></View>
+                <View style={{ flex: 1, height: 40, justifyContent: "center" }}>
+                    <TextInput placeholderTextColor="#aaa" placeholder="Search" style={{ paddingHorizontal: 10, backgroundColor: "#eee", borderRadius: 10, color: "black" }} />
+                </View>
             </View>
             <View style={{ flexDirection: "row" }}>
                 <View style={{ marginHorizontal: 10 }}>
