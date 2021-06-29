@@ -9,7 +9,7 @@ const Stack = createStackNavigator();
 export default function MainNavigator(props) {
 	return (
 		<NavigationContainer >
-			<Stack.Navigator initialRouteName={"IntroSlides"}>
+			<Stack.Navigator initialRouteName={"Home"}>
 				{Object.keys(MainScreens).map((key) => {
 					return (
 						<Stack.Screen key={key} name={key} component={MainScreens[key]} />
