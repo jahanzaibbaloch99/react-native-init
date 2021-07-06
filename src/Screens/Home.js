@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { View, Text, StyleSheet, Button, Image } from 'react-native';
-import { FastImage } from "../Components";
 import { Images } from "../Assets";
 import { Colors } from "../Themes";
+import { SmartImage } from 'components';
 
 export default function Home(props) {
 
@@ -17,7 +17,10 @@ export default function Home(props) {
 function AppIntro(props) {
 	return (
 		<View>
-			<Image style={{ alignSelf: 'center', marginVertical: 20 }} source={Images.hamburgerIcon} />
+			<SmartImage
+				style={{ alignSelf: 'center', marginVertical: 20 }}
+				source={Images.hamburgerIcon}
+			/>
 			<Text style={styles.heading}>
 				{props.title}
 			</Text>
